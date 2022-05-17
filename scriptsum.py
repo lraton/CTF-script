@@ -1,0 +1,10 @@
+from pwn import *
+conn = remote("sum.challs.cyberchallenge.it",9134)
+conn.recvuntil(b"> ")
+conn.sendline(b"10")
+conn.recvuntil(b"> ")
+conn.sendline(b"set 2 3")
+print(conn.recvline())
+print(conn.recvline())
+print(conn.recvline())
+print(conn.recvline())
